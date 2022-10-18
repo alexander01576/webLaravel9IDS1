@@ -25,7 +25,11 @@ class cliente_controller extends Controller
         $cliente->email = $request->email;
         $cliente->celular = $request->celular;
         $cliente->estatus = $request->estatus;
-        $cliente->imagen = $request->imagen;
+        
+        if ($request->file('imagen') != null) {
+            $path = $request->file('imagen')->store('storage');
+            $cliente->imagen = $path;
+        }
         
         $cliente->save();
         return $cliente;
