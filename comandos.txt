@@ -1,0 +1,45 @@
+# Comandos del proyecto
+
+
+composer require laravel/ui 
+# Instala las dependencias de Laravel UI
+
+php artisan ui bootstrap --auth 
+# Instala Bootstrap y el sistema de autenticación
+
+npm install 
+# Instala las dependencias de Node.js
+
+npm run dev
+# Compila los archivos de JavaScript y CSS
+
+composer require laravel/passport
+# Instala Passport
+
+php artisan migrate
+# Crea las tablas de Passport
+
+php artisan passport:install
+# Crea las llaves de Passport
+
+php artisan make:migration create_products_table
+# Crea una migración para la tabla de productos
+
+php artisan migrate 
+# Crea la tabla de productos
+
+php artisan make:model Product 
+# Crea el modelo de productos
+
+php artisan make:controller login_controller
+# Crea el controlador de login
+
+php artisan make:controller products_controller
+# Crea el controlador de productos
+
+php artisan serv --host=192.168.137.1
+# Inicia el servidor de Laravel
+
+php artisan storage:link
+# Crea un enlace simbólico para la carpeta de almacenamiento
+
