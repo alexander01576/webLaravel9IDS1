@@ -27,7 +27,7 @@ class cliente_controller extends Controller
         $cliente->estatus = $request->estatus;
         
         if ($request->file('imagen') != null) {
-            $path = $request->file('imagen')->store('storage');
+            $path = $request->file('imagen')->store('public');
             $cliente->imagen = $path;
         }
         
