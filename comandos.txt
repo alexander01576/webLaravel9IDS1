@@ -43,3 +43,11 @@ php artisan serv --host=192.168.137.1
 php artisan storage:link
 # Crea un enlace simbólico para la carpeta de almacenamiento
 
+php artisan make:migration alter_cliente_table
+# Crea una migración para modificar la tabla de clientes
+
+php artisan make:migration create_transportes_table
+#crear una nueva tabla llamada Transportes que contenga los elementos de id y nombre
+
+#crear el modelo de Transportes
+php artisan make:model Transportes

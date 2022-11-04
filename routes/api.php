@@ -25,3 +25,6 @@ Route::post('login', [login_controller::class, 'login']);
 Route::get('cliente/list', [cliente_controller::class , 'index'])->middleware('auth:api');
 Route::post('cliente/delete', [cliente_controller::class , 'delete'])->middleware('auth:api');
 Route::post('cliente/save', [cliente_controller::class , 'save'])->middleware('auth:api');
+
+//ruta para obtener el listado de transportes
+Route::get('transportes/list', [cliente_controller::class , 'getTransportes']);
