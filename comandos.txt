@@ -1,4 +1,4 @@
-# Comandos del proyecto
+# Comandos para el proyecto
 
 
 composer require laravel/ui 
@@ -26,10 +26,10 @@ php artisan make:migration create_products_table
 # Crea una migración para la tabla de productos
 
 php artisan migrate 
-# Crea la tabla de productos
+# Crea las tablas
 
 php artisan make:model Product 
-# Crea el modelo de productos
+# Crea el modelo
 
 php artisan make:controller login_controller
 # Crea el controlador de login

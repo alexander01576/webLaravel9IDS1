@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('cliente', function (Blueprint $table) {
-            $table->BigInteger('id_Tipo')->nullable();
+        // agregar llave foranea a la tabla carro de tipo_carro
+        Schema::table('carro', function (Blueprint $table) {
+            $table->foreignId('id_tipo_carro')->references('id_tipo')->on('tipo');
         });
     }
 
@@ -25,8 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('cliente', function (Blueprint $table) {
-            $table->dropColumn('id_Tipo');
+        //eliminar llave foranea de la tabla carro de tipo_carro
+        Schema::table('carro', function (Blueprint $table) {
+            $table->dropForeign('id_tipo_carro');
         });
     }
 };

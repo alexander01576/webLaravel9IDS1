@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cliente', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
-            $table->string('ap_pat');
-            $table->string('ap_mat');
-            $table->string('email');
-            $table->bigInteger('celular');
-            $table->string('estatus');
-            $table->string('imagen')->nullable();
+            $table->id('id_cliente');
+            $table->string('nombre:_cliente');
+            $table->string('ap_pat_cliente');
+            $table->string('ap_mat_cliente');
+            $table->string('email_cliente');
+            $table->bigInteger('celular_cliente');
+            $table->string('estatus_cliente');
+            $table->string('imagen_cliente')->nullable();
             $table->timestamps();
         });
     }
