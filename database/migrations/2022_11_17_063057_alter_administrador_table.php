@@ -15,7 +15,8 @@ return new class extends Migration
     {
         // agregar llave foranea a la tabla administrador de estacionamiento
         Schema::table('administrador', function (Blueprint $table) {
-            $table->foreignId('id_estacionamiento_administrador')->references('id_estacionamiento')->on('estacionamiento');
+            // $table->foreignId('id_estacionamiento_administrador')->references('id_estacionamiento')->on('estacionamiento');
+            $table->foreignId('id_estacionamiento_administrador')->constrained('estacionamiento');
         });
     }
 

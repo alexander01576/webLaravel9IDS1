@@ -15,8 +15,10 @@ return new class extends Migration
     {
         // agregar llave foranea a la tabla cajon de estacionamiento
         Schema::table('cajon', function (Blueprint $table) {
-            $table->foreignId('id_estacionamiento_cajon')->references('id_estacionamiento')->on('estacionamiento');
-            $table->foreignId('id_carro_cajon')->references('id_carro')->on('carro');
+            // $table->foreignId('id_estacionamiento_cajon')->references('id_estacionamiento')->on('estacionamiento');
+            // $table->foreignId('id_carro_cajon')->references('id_carro')->on('carro');
+            $table->foreignId('id_estacionamiento_cajon')->constrained('estacionamiento');
+            $table->foreignId('id_carro_cajon')->constrained('carro');
         });
     }
 

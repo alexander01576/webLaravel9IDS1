@@ -14,13 +14,10 @@ class cliente_controller extends Controller
         //$cliente = Cliente::all();
 
         $cliente = DB::table('cliente')
-        //hacer el left join a la tabla de transportes
-        ->leftJoin('transportes', 'cliente.id_Tipo', '=', 'transportes.id')
-        //seleccionar los campos de la tabla cliente y transportes
-        ->select('cliente.*', 'transportes.nombre as nombreTransporte')
-        //seleccionar el id de la tabla transportes
-        ->addSelect('transportes.id as idTransporte')
-        //obtener los registros
+        //hacer el left join a la tabla de carro
+        ->join('carro', 'cliente.id_carro_cliente', '=', 'carro.id')
+        ->select('cliente.*', 'carro.placas_carro as placasCarro')
+        ->addSelect('carro.id as carro_cliente')
         ->get();
 
         return $cliente;
@@ -39,17 +36,17 @@ class cliente_controller extends Controller
             $cliente = Cliente::find($request->id);
         }
         
-        $cliente->nombre = $request->nombre;
-        $cliente->ap_pat = $request->ap_pat;
-        $cliente->ap_mat = $request->ap_mat;
-        $cliente->email = $request->email;
-        $cliente->celular = $request->celular;
-        $cliente->estatus = $request->estatus;
-        $cliente->id_Tipo = $request->id_Tipo;
-        
+        $cliente->nombre_cliente = $request->nombre_cliente;
+        $cliente->ap_pat_cliente = $request->ap_pat_cliente;
+        $cliente->ap_mat_cliente = $request->ap_mat_cliente;
+        $cliente->email_cliente = $request->email_cliente;
+        $cliente->celular_cliente = $request->celular_cliente;
+        $cliente->estatus_cliente = $request->estatus_cliente;
+        $cliente->id_carro_cliente = $request->id_carro_cliente;
+
         if ($request->file('imagen') != null) {
             $path = $request->file('imagen')->store('public');
-            $cliente->imagen = $path;
+            $cliente->imagen_cliente = $path;
         }
         
         $cliente->save();
@@ -59,6 +56,6 @@ class cliente_controller extends Controller
     public function delete(Request $request){
         $cliente = Cliente::find($request->id);
         $cliente->delete();
-        return "OK - eliminado";
+        return "Cliente eliminado";
     }
 }

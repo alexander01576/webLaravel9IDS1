@@ -15,7 +15,8 @@ return new class extends Migration
     {
         // agregar llave foranea a la tabla carro de tipo_carro
         Schema::table('carro', function (Blueprint $table) {
-            $table->foreignId('id_tipo_carro')->references('id_tipo')->on('tipo');
+            // $table->foreignId('id_tipo_carro')->references('id_tipo')->on('tipo');
+            $table->foreignId('id_tipo_carro')->constrained('tipo');
         });
     }
 

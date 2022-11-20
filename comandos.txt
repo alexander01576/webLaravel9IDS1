@@ -51,3 +51,6 @@ php artisan make:migration create_transportes_table
 
 #crear el modelo de Transportes
 php artisan make:model Transportes
+
+# Restablece la base de datos y ejecuta todas las migraciones
+php artisan migrate:fresh
