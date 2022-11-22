@@ -30,39 +30,39 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [login_controller::class, 'login']);
 
 //ruta para el CRUD de la tabla cliente
-Route::get('cliente/list', [cliente_controller::class , 'index']);
-Route::post('cliente/delete', [cliente_controller::class , 'delete']);
-Route::post('cliente/save', [cliente_controller::class , 'save']);
+Route::get('cliente/list', [cliente_controller::class , 'index'])->middleware('auth:api');
+Route::post('cliente/delete', [cliente_controller::class , 'delete'])->middleware('auth:api');
+Route::post('cliente/save', [cliente_controller::class , 'save'])->middleware('auth:api');
 
 //Crud para la tabla "tipo"
-Route::get('tipo/list', [tipo_controller::class , 'index']);
-Route::post('tipo/delete', [tipo_controller::class , 'delete']);
-Route::post('tipo/save', [tipo_controller::class , 'save']);
+Route::get('tipo/list', [tipo_controller::class , 'index'])->middleware('auth:api');
+Route::post('tipo/delete', [tipo_controller::class , 'delete'])->middleware('auth:api');
+Route::post('tipo/save', [tipo_controller::class , 'save'])->middleware('auth:api');
 
 //obtener los valores de la tabla Carro
-Route::get('carro/list', [carro_controller::class , 'index']);
-Route::post('carro/delete', [carro_controller::class , 'delete']);
-Route::post('carro/save', [carro_controller::class , 'save']);
+Route::get('carro/list', [carro_controller::class , 'index'])->middleware('auth:api');
+Route::post('carro/delete', [carro_controller::class , 'delete'])->middleware('auth:api');
+Route::post('carro/save', [carro_controller::class , 'save'])->middleware('auth:api');
 
 //obtener los valores de la tabla cajon
-Route::get('cajon/list', [cajon_controller::class , 'index']);
-Route::post('cajon/delete', [cajon_controller::class , 'delete']);
-Route::post('cajon/save', [cajon_controller::class , 'save']);
+Route::get('cajon/list', [cajon_controller::class , 'index'])->middleware('auth:api');
+Route::post('cajon/delete', [cajon_controller::class , 'delete'])->middleware('auth:api');
+Route::post('cajon/save', [cajon_controller::class , 'save'])->middleware('auth:api');
 
 //obtener los valores de la tabla estacionamiento
-Route::get('estacionamiento/list', [estacionamiento_controller::class , 'index']);
-Route::post('estacionamiento/delete', [estacionamiento_controller::class , 'delete']);
-Route::post('estacionamiento/save', [estacionamiento_controller::class , 'save']);
+Route::get('estacionamiento/list', [estacionamiento_controller::class , 'index'])->middleware('auth:api');
+Route::post('estacionamiento/delete', [estacionamiento_controller::class , 'delete'])->middleware('auth:api');
+Route::post('estacionamiento/save', [estacionamiento_controller::class , 'save'])->middleware('auth:api');
 
 //obtener los valores de la tabla administador
-Route::get('administrador/list', [administrador_controller::class , 'index']);
-Route::post('administrador/delete', [administrador_controller::class , 'delete']);
-Route::post('administrador/save', [administrador_controller::class , 'save']);
+Route::get('administrador/list', [administrador_controller::class , 'index'])->middleware('auth:api');
+Route::post('administrador/delete', [administrador_controller::class , 'delete'])->middleware('auth:api');
+Route::post('administrador/save', [administrador_controller::class , 'save'])->middleware('auth:api');
 
 //obtener los valores de la tabla reserva
-Route::get('reserva/list', [reserva_controller::class , 'index']);
-Route::post('reserva/delete', [reserva_controller::class , 'delete']);
-Route::post('reserva/save', [reserva_controller::class , 'save']);
+Route::get('reserva/list', [reserva_controller::class , 'index'])->middleware('auth:api');
+Route::post('reserva/delete', [reserva_controller::class , 'delete'])->middleware('auth:api');
+Route::post('reserva/save', [reserva_controller::class , 'save'])->middleware('auth:api');
     
 
 

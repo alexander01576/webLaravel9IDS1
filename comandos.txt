@@ -54,3 +54,24 @@ php artisan make:model Transportes
 
 # Restablece la base de datos y ejecuta todas las migraciones
 php artisan migrate:fresh
+
+
+/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+#consultas de la base de datos con las tablas finales
+
+
+select * from estacionamiento;
+
+select * from administrador;
+
+select * from cajon;
+
+select * from tipo;
+
+select * from carro;
+
+select * from cliente;
+
+select * from reserva;
+s
