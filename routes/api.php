@@ -7,6 +7,7 @@ use App\Http\Controllers\carro_controller;
 use App\Http\Controllers\cajon_controller;
 use App\Http\Controllers\estacionamiento_controller;
 use App\Http\Controllers\administrador_controller;
+use App\Http\Controllers\reserva_controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,11 @@ Route::post('estacionamiento/save', [estacionamiento_controller::class , 'save']
 Route::get('administrador/list', [administrador_controller::class , 'index']);
 Route::post('administrador/delete', [administrador_controller::class , 'delete']);
 Route::post('administrador/save', [administrador_controller::class , 'save']);
+
+//obtener los valores de la tabla reserva
+Route::get('reserva/list', [reserva_controller::class , 'index']);
+Route::post('reserva/delete', [reserva_controller::class , 'delete']);
+Route::post('reserva/save', [reserva_controller::class , 'save']);
     
 
 

@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('administrador', function (Blueprint $table) {
-            $table->foreignId('id_estacionamiento_administrador')->constrained('estacionamiento');
+        Schema::create('reserva', function (Blueprint $table) {
+            $table->id();
+            $table->string('estatus_reserva');
+            $table->date('fecha_reserva');
+            $table->timestamps();
         });
     }
 
@@ -25,9 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //eliminar llave foranea de la tabla administrador de estacionamiento
-        Schema::table('administrador', function (Blueprint $table) {
-            $table->dropForeign('id_estacionamiento_administrador');
-        });
+        Schema::dropIfExists('reserva');
     }
 };

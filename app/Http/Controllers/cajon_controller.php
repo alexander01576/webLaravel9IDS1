@@ -24,7 +24,6 @@ class cajon_controller extends Controller
         
         $cajon->nombre_cajon = $request->nombre_cajon;
         $cajon->id_estacionamiento_cajon = $request->id_estacionamiento_cajon;
-        $cajon->id_carro_cajon = $request->id_carro_cajon;
         
         $cajon->save();
         return $cajon;
