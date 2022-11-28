@@ -37,4 +37,15 @@ class reserva_controller extends Controller
         $reserva->delete();
         return "Reserva eliminada";
     }
+    
+    public function view(Request $request){
+        $reserva = DB::table('reserva')
+            ->join('cliente', 'reserva.id_cliente_reserva', '=', 'cliente.id')
+            ->join('carro', 'cliente.id_carro_cliente', '=', 'carro.id')
+            ->select('reserva.id as id_reserva', 'reserva.estatus_reserva', 'reserva.fecha_reserva', 'carro.placas_carro', DB::raw("CONCAT(cliente.nombre_cliente, ' ', cliente.ap_pat_cliente) as nombre_cliente"))
+            ->where('reserva.id_cliente_reserva', '=', $request->id)
+            ->get();
+
+        return $reserva;
+    }
 }

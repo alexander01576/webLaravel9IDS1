@@ -34,6 +34,7 @@ Route::get('cliente/list', [cliente_controller::class , 'index'])->middleware('a
 Route::post('cliente/delete', [cliente_controller::class , 'delete'])->middleware('auth:api');
 Route::post('cliente/save', [cliente_controller::class , 'save'])->middleware('auth:api');
 
+
 //Crud para la tabla "tipo"
 Route::get('tipo/list', [tipo_controller::class , 'index'])->middleware('auth:api');
 Route::post('tipo/delete', [tipo_controller::class , 'delete'])->middleware('auth:api');
@@ -63,6 +64,7 @@ Route::post('administrador/save', [administrador_controller::class , 'save'])->m
 Route::get('reserva/list', [reserva_controller::class , 'index'])->middleware('auth:api');
 Route::post('reserva/delete', [reserva_controller::class , 'delete'])->middleware('auth:api');
 Route::post('reserva/save', [reserva_controller::class , 'save'])->middleware('auth:api');
+Route::post('reserva/view', [reserva_controller::class , 'view']);
     
 
 
